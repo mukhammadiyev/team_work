@@ -1,0 +1,52 @@
+header {
+	width: 100%;
+	background-color: #fbfbfb;
+}
+
+/* navbar end */
+/* header start */
+
+header .container .header_content {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* gap: 30px; */
+	padding: 120px 0 80px 0;
+}
+
+header .container .header_content h1 {
+	font-size: 80px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+header .container .header_content p {
+	font-size: 34px;
+	font-weight: 400;
+	margin-bottom: 30px;
+}
+
+header .container .header_content .search_form {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+header .container .header_content .search_form .search_input {
+	font-size: 18px;
+	padding: 13px 25px;
+	width: 730px;
+	border: 1px solid #e3e3e3;
+	outline: none;
+	border-radius: 8px;
+}
+
+header .container .header_content .search_form button {
+	padding: 12px 30px;
+}
+
+header .container .header_content .search_form button:active {
+	background-color: transparent;
+	color: #2071c3;
+}

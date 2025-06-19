@@ -1,0 +1,59 @@
+nav {
+	width: 100%;
+	background-color: #fff;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+nav .container .navbar {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 0px;
+}
+
+nav .container .navbar .navbar_logo {
+	font-size: 25px;
+	font-weight: 600;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+nav .container .navbar .navbar_liks_login {
+	display: flex;
+	align-items: center;
+	gap: 50px;
+}
+
+.navbar .navbar_liks_login ul {
+	display: flex;
+	gap: 50px;
+}
+
+.navbar .navbar_liks_login ul li {
+	list-style: none;
+}
+
+.navbar .navbar_liks_login ul li a {
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: 500;
+	color: #000;
+}
+
+.navbar .navbar_liks_login button,
+header .container .header_content .search_form button {
+	font-size: 20px;
+	color: #fff;
+	background-color: #2071c3;
+	border: 1px solid #2071c3;
+	outline: none;
+	padding: 5px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.navbar .navbar_liks_login button:hover {
+	background-color: transparent;
+	color: #2071c3;
+}

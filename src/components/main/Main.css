@@ -1,0 +1,57 @@
+main {
+	width: 100%;
+	background-color: #fff;
+}
+
+main .container .cards {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 30px;
+	gap: 30px;
+}
+
+.cards .card {
+	width: 550px;
+	height: 300px;
+	border: 2px solid #e3e3e3;
+	border-radius: 20px;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+}
+
+.card h2 {
+	font-size: 40px;
+	margin-bottom: 5px;
+}
+
+.card h3 {
+	font-size: 28px;
+	color: #2c2c2c;
+	opacity: 0.9;
+	margin-bottom: 10px;
+}
+
+.card p {
+	width: 100%;
+	font-size: 30px;
+	height: 80px;
+	margin-bottom: 15px;
+}
+
+.card .control_btns {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	align-self: end;
+}
+
+.control_btns button {
+	font-size: 20px;
+	padding: 8px 25px;
+	border-radius: 10px;
+	outline: none;
+	cursor: pointer;
+}
