@@ -15,7 +15,7 @@ function Header() {
 							placeholder='Search posts...'
 							required
 						/>
-						<button type='submit'>Search</button>
+						<button className='search_btn' type='submit'>Search</button>
 					</form>
 				</div>
 			</div>

@@ -17,7 +17,7 @@ const RootLayout = () => {
             <Navbar onOpenPost={handleOpenPost}/>
         </header>
         <main>
-            <Post openPost={openPost}/>
+            <Post openPost={openPost} setOpePost={setOpePost}/>
             <Outlet/>
         </main>
         <footer>

@@ -42,8 +42,9 @@ header .container .header_content .search_form .search_input {
 	border-radius: 8px;
 }
 
-header .container .header_content .search_form button {
-	padding: 12px 30px;
+.search_btn{
+	padding: 10px 20px !important;
+	height: max-content;
 }
 
 header .container .header_content .search_form button:active {
