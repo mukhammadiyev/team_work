@@ -1,0 +1,16 @@
+.cards{
+    display: inline-flex;
+    padding-left: 180px;
+    margin-top: 50px;
+}
+.card{
+    width: 400px;
+    height: 280px;
+    border: 2px solid gray;
+    border-radius: 6px;
+    padding: 30px;
+}
+.card-title{
+    font-size: 20px;
+    padding-bottom: 20px;
+}

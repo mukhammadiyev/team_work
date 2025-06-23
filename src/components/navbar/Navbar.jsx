@@ -1,5 +1,7 @@
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 import './Navbar.css'
-function Navbar() {
+function Navbar({handleOpenPost}) {
 	return (
 		<nav>
 			<div className='container'>
@@ -8,13 +10,13 @@ function Navbar() {
 					<div className='navbar_liks_login'>
 						<ul>
 							<li>
-								<a href='#'>Home</a>
+								<NavLink to='/'>Home</NavLink>
 							</li>
 							<li>
-								<a href='#'>Add Post</a>
+								<NavLink to="" onClick={handleOpenPost}>Add Post</NavLink>
 							</li>
 						</ul>
-						<button>Log in</button>
+						<button>Login</button>
 					</div>
 				</div>
 			</div>
