@@ -1,4 +1,4 @@
-.cards{
+/* .cards{
     display: inline-flex;
     padding-left: 180px;
     margin-top: 50px;
@@ -13,4 +13,60 @@
 .card-title{
     font-size: 20px;
     padding-bottom: 20px;
+} */
+
+.cards {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 50px;
+	flex-wrap: wrap;
+	padding-left: 100px;
+	padding-top: 50px;
+}
+
+.card {
+	width: 500px;
+	height: 350px;
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 25px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.card .card-title {
+	width: 100%;
+	overflow: hidden;
+	height: 50px;
+	/* background-color: aqua; */
+	font-size: 35px;
+}
+
+.card .card_date {
+	/* background-color: aqua; */
+	height: 30px;
+	font-size: 20px;
+}
+
+.card .card_info {
+	/* background-color: aqua; */
+	height: 170px;
+    padding-top: 10px;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+.card_control_btns {
+	align-self: end;
+	display: flex;
+	gap: 10px;
+}
+
+.card_control_btns button {
+	padding: 5px 15px;
+	font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
