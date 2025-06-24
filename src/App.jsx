@@ -7,8 +7,6 @@ import {
 	Route
 } from 'react-router-dom'
 import RootLayout from './Layout/RootLayout'
-import Post from './Page/post/Post'
-import { useState } from 'react'
 
 
 function App() {

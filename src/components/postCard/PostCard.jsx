@@ -1,7 +1,7 @@
 import React from 'react'
 import "./PostCard.css"
 
-const PostCard = ({ users }) => {
+const PostCard = ({ users}) => {
 
   return (
     <div>
@@ -11,6 +11,7 @@ const PostCard = ({ users }) => {
             <div className='card'>
               <h1 className='card-title'>{user.title}</h1>
               <p>{user.body}</p>
+              <button>Edi</button>
             </div>
           </div>
         )
