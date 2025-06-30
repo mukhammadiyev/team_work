@@ -1,6 +1,10 @@
 import './PostCard.css'
 
 const PostCard = ({ users, setEdit }) => {
+	// Cardni o'chirish uchun function
+	function handleDeleter(e) {
+		e.target.parentElement.parentElement.remove()
+	}
 	return (
 		<div className='container'>
 			<div className='cards'>
@@ -11,11 +15,10 @@ const PostCard = ({ users, setEdit }) => {
 						<p className='card_info'>{user.body}</p>
 						<div className='card_control_btns'>
 							<button onClick={() => setEdit(true)}>Edit</button>
-							<button>Delete</button>
+							<button onClick={e => handleDeleter(e)}>Delete</button>
 						</div>
 					</div>
 				))}
-
 			</div>
 		</div>
 	)
