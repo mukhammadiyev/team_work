@@ -1,18 +1,41 @@
 import { useState } from 'react'
 import './Post.css'
-const Post = ({ openPost, setOpePost }) => {
-	const [title, setTitle] = useState()
-	const [text, setText] = useState()
 
-	function heading() {
+const Post = ({ openPost, setOpePost, onPostAdded }) => {
+	const [title, setTitle] = useState("")
+	const [text, setText] = useState("")
+
+	async function heading() {
 		const user = {
 			userId: 1,
 			id: 1,
 			title: title,
 			body: text,
 		}
+		
 
-		console.log(user)
+		try {
+			const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(user),
+			})
+
+			const result = await response.json()
+			console.log("Yuborildi:", result)
+
+			// 🔄 POST'dan keyin yangilash
+			onPostAdded && onPostAdded()
+
+			// Tozalash va yopish
+			setTitle("")
+			setText("")
+			setOpePost(false)
+		} catch (error) {
+			console.error("Xatolik:", error)
+		}
 	}
 
 	return (
@@ -22,16 +45,15 @@ const Post = ({ openPost, setOpePost }) => {
 					<div className='add_post'>
 						<i
 							onClick={() => setOpePost(false)}
-							className=' close fa-solid fa-close'
+							className='close fa-solid fa-close'
 						></i>
 						<h2>New Post</h2>
 						<form>
 							<label>
 								<span>Title</span>
 								<input
-									onInput={e => {
-										setTitle(e.target.value)
-									}}
+									onChange={e => setTitle(e.target.value)}
+									value={title}
 									required
 									type='text'
 									name='title'
@@ -40,9 +62,8 @@ const Post = ({ openPost, setOpePost }) => {
 							<label>
 								<span>Body</span>
 								<textarea
-									onChange={e => {
-										setText(e.target.value)
-									}}
+									onChange={e => setText(e.target.value)}
+									value={text}
 									required
 								></textarea>
 							</label>
