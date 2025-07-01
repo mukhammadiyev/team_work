@@ -7,7 +7,7 @@ import Post from '../Page/post/Post'
 
 const RootLayout = () => {
 	const [openPost, setOpePost] = useState(false)
-	const [newPost, setNewPost] = useState(null) // 🔄 Home'ga uzatish uchun
+	const [newPost, setNewPost] = useState(null) //  Home'ga uzatish uchun
 
 	const handleOpenPost = () => setOpePost(true)
 	const handlePostAdded = (post) => {
@@ -21,10 +21,8 @@ const RootLayout = () => {
 				<Navbar onOpenPost={handleOpenPost} />
 			</header>
 			<main>
-				{/* 📝 Modal */}
 				<Post openPost={openPost} setOpePost={setOpePost} onPostAdded={handlePostAdded} />
 
-				{/* 📤 Home yoki boshqa sahifalarga uzatamiz */}
 				<Outlet context={{ newPost }} />
 			</main>
 			<footer>

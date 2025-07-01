@@ -8,7 +8,7 @@ const Post = ({ openPost, setOpePost, onPostAdded }) => {
 	async function heading() {
 		const user = {
 			userId: 1,
-			id: Date.now(), // 🔄 ID unikallik uchun
+			id: Date.now(), //  ID unikallik uchun
 			title: title,
 			body: text,
 		}
@@ -25,7 +25,7 @@ const Post = ({ openPost, setOpePost, onPostAdded }) => {
 			const result = await response.json()
 			console.log("Yuborildi:", result)
 
-			// 🔄 Parentga yangi postni jo‘natamiz
+			//  Parentga yangi postni jo‘natamiz
 			onPostAdded && onPostAdded(result)
 
 			// Tozalash va modalni yopish

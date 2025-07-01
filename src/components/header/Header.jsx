@@ -3,7 +3,6 @@ import './Header.css'
 function Header() {
 	return (
 		<header>
-			{/* <Navbar /> */}
 			<div className='container'>
 				<div className='header_content'>
 					<h1>IT Blog Platform</h1>

@@ -1,4 +1,3 @@
-// src/pages/home/Home.jsx
 import { useEffect, useState } from 'react'
 import { useOutletContext } from 'react-router-dom'
 import Edit from '../../components/edit/Edit'
@@ -7,8 +6,10 @@ import Header from '../../components/header/Header'
 
 const Home = () => {
 	const [edit, setEdit] = useState(false)
+	const [editData, setEditData] = useState(null)
 	const [users, setUsers] = useState([])
-	const { newPost } = useOutletContext() // 🔄 RootLayout'dan keladi
+
+	const { newPost } = useOutletContext()
 
 	const fetchUsers = async () => {
 		const res = await fetch('https://jsonplaceholder.typicode.com/posts')
@@ -20,18 +21,36 @@ const Home = () => {
 		fetchUsers()
 	}, [])
 
-	// 🔄 Yangi post qo‘shilganida local state'ga qo‘shish
 	useEffect(() => {
 		if (newPost) {
 			setUsers(prev => [newPost, ...prev])
 		}
 	}, [newPost])
 
+	//  Edit saqlanganda array ichida postni yangilash
+	const handleUpdate = (updatedPost) => {
+		setUsers(prev =>
+			prev.map(post =>
+				post.id === updatedPost.id ? updatedPost : post
+			)
+		)
+	}
+
 	return (
 		<div>
 			<Header/>
-			{edit && <Edit setEdit={setEdit} users={users} />}
-			<PostCard users={users} setEdit={setEdit} />
+			{edit && (
+				<Edit
+					setEdit={setEdit}
+					editData={editData}   //  tahrir qilinayotgan post
+					onSave={handleUpdate} //  saqlash funksiyasi
+				/>
+			)}
+			<PostCard
+				users={users}
+				setEdit={setEdit}
+				setEditData={setEditData} //  tanlangan postni uzatadi
+			/>
 		</div>
 	)
 }
