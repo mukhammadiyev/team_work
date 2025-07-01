@@ -8,11 +8,10 @@ const Post = ({ openPost, setOpePost, onPostAdded }) => {
 	async function heading() {
 		const user = {
 			userId: 1,
-			id: 1,
+			id: Date.now(), // 🔄 ID unikallik uchun
 			title: title,
 			body: text,
 		}
-		
 
 		try {
 			const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
@@ -26,10 +25,10 @@ const Post = ({ openPost, setOpePost, onPostAdded }) => {
 			const result = await response.json()
 			console.log("Yuborildi:", result)
 
-			// 🔄 POST'dan keyin yangilash
-			onPostAdded && onPostAdded()
+			// 🔄 Parentga yangi postni jo‘natamiz
+			onPostAdded && onPostAdded(result)
 
-			// Tozalash va yopish
+			// Tozalash va modalni yopish
 			setTitle("")
 			setText("")
 			setOpePost(false)
