@@ -51,3 +51,9 @@ header .container .header_content .search_form button:active {
 	background-color: transparent;
 	color: #2071c3;
 }
+
+@media (max-width:460px){
+	.search_form .search_input{
+		width: 80% !important;
+	}
+}
